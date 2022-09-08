@@ -1,0 +1,2 @@
+- Update stock_list to include all the stocks in get_full_data() function and run the script.
+- Update api key in get_news_data() parameters

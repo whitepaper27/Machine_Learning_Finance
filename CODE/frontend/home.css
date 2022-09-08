@@ -1,0 +1,510 @@
+body{
+    font-size: 18px;
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #ebeef2;
+}
+
+
+#header{
+    width:100%;
+    height:60px;
+    background-color: rgb(31, 197, 147);
+    font: 20px Arial;
+    padding-left:15px;
+    padding-top:15px;
+    color:white;
+    margin-bottom:40px;
+    display:flex;
+    justify-content: space-between;
+    padding:15px;
+    align-items: center;
+}
+
+#maincontainer{
+    width:100%;
+    display:flex;
+    justify-content: center;
+    flex-wrap:wrap;
+}
+
+#rowcontainer1{
+    width:80%;
+    height:225px;
+    /* background-color: rgb(255, 255, 255); */
+    font-size: 18px;
+    color:white;
+    display:flex;
+    justify-content: space-around;
+    margin-bottom: 40px;
+}
+
+#boxlabel{
+    width:100%;
+    font-size:18px;
+    height:45px;
+    color:white;
+    background-color: rgb(31, 197, 147);
+    align-items: center;
+    display:flex;
+}
+#portlabel{
+    width:100%;
+    font-size:18px;
+    height:px;
+    color:black;
+    background-color: rgb(255, 255, 255);
+    align-items: center;
+    display:flex;
+}
+#text {
+    padding:10px;
+}
+#titles{
+    padding: 10px;
+    width:100%;
+    /* font-size:5px; */
+    /* text-decoration: underline; */
+}
+
+#portval{
+    width:20%;
+    /* background-color: blueviolet; */
+}
+
+#portcont{
+    height:87%;
+    width:100%;
+    display:flex;
+    border:solid lightgray 1.5px;
+}
+#current{
+    width:50%;
+    color:black;
+    background-color: rgb(253, 253, 253);
+    /* border:solid black; */
+    align-items: center;
+    justify-content: center;
+    display:flex;
+    font-size:18px;
+    text-align: center;
+    border-right:solid rgb(168, 168, 168) 1px;
+}
+img{
+    margin-top: 15px;
+}
+#prospective{
+    width:50%;
+    color:black;
+    background-color: rgb(253, 253, 253);
+    /* border:solid black; */
+    align-items: center;
+    justify-content: center;
+    font-size:18px;
+    display:flex;
+    text-align: center;
+}
+#tickbox{
+    width:58%;
+    /* background-color: rgb(223, 226, 43); */
+}
+
+#tickcontainer{
+    width:100%;
+    height:87%;
+    /* background-color: brown; */
+    display:flex;
+
+}
+
+#tickerside{
+    width:100%;
+    height:100%;
+    background-color: rgb(245, 245, 245);
+    display:flex;
+    justify-content: space-around;
+    flex-wrap:wrap;
+    align-items: center;
+    border:solid lightgray 1.5px;
+}
+
+#stock {
+    background-color: rgb(255, 255, 255);
+    color:black;
+    font-size:14px;
+    width:30%;
+    padding:15px;
+    text-align: center;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    border-radius:6%;
+    border:solid lightgray 2px;
+}
+#sym{
+    font-size:26px;
+}
+#percinc{
+    color:rgb(18, 165, 18);
+    /* font-size:38px; */
+}
+#titles{
+    font-size:20px;
+}
+#num{
+    font-size:25px;
+    
+}
+#percdec{
+    color:rgb(190, 27, 27);
+    /* font-size:38px; */
+}
+
+#optiside{
+    width:18%;
+    height:100%;
+    background-color: rgb(245, 245, 245);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap:wrap;
+}
+
+#actions{
+    width:100%;
+    height:87%;
+        /* background-color: brown; */
+    display:flex;
+    border:solid lightgray 1.5px;
+}
+
+#actbut{
+  
+        width:100%;
+        height:100%;
+        background-color: rgb(245, 245, 245);
+        display:flex;
+        justify-content: space-around;
+        flex-wrap:wrap;
+        align-items: center;
+    
+    
+}
+.d3-tip {
+    line-height: 1.5;
+    font-weight: 400;
+    font-family:"avenir next", Arial, sans-serif;
+    padding: 6px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #FFA500;
+    border-radius: 1px;
+    pointer-events: none;
+  }
+
+  /* Creates a small triangle extender for the tooltip */
+  .d3-tip:after {      
+    box-sizing: border-box;
+    display: inline;
+    font-size: 8px;
+    /* width: 100%; */
+    line-height: 1.5;
+    color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    pointer-events: none;
+    
+  }
+
+  /* Northward tooltips */
+  .d3-tip.n:after {
+    content: "\25BC";
+    margin: -1px 0 0 0;
+    top: 100%;
+    left: 0;
+    text-align: center;
+  }
+
+  /* Eastward tooltips */
+  .d3-tip.e:after {
+    content: "\25C0";
+    margin: -4px 0 0 0;
+    top: 50%;
+    left: -8px;
+  }
+
+  /* Southward tooltips */
+  .d3-tip.s:after {
+    content: "\25B2";
+    margin: 0 0 1px 0;
+    top: -8px;
+    left: 0;
+    text-align: center;
+  }
+
+  /* Westward tooltips */
+  .d3-tip.w:after {
+    content: "\25B6";
+    margin: -4px 0 0 -1px;
+    top: 50%;
+    left: 100%;
+  }
+
+
+#rowcontainer2{
+    width:81%;
+    height:830px;
+    /* background-color: rgb(50, 38, 214); */
+    font-size: 18px;
+    color:rgb(231, 231, 231);
+    display:flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+.fontcolor{
+    color: white;
+  }
+#str{
+    /* color:rgb(31, 197, 147); */
+}
+#myportgraph {
+    width:48%;
+    height:100%;
+    background-color: rgb(245, 245, 245);
+    color:black;
+    border:solid lightgray 1.5px;
+   display:flex;
+   justify-content: center;
+   flex-wrap:wrap;
+}
+
+.mybtn{
+    font-size:14px;
+    border-radius:15%;
+    padding:10px;
+    background-color: rgb(187, 188, 189);
+    
+}
+
+
+#marketindex{
+    width:48%;
+    height:100%;
+    background-color: rgb(245, 245, 245);
+    border:solid lightgray 1.5px;
+    color:black;
+    /* display:flex;
+    justify-content: center;
+    flex-wrap:wrap; */
+}
+
+#portfolios {
+    width:55%;
+    height:100%;
+}
+#boxlabeltop{
+    width:100%;
+    font-size:18px;
+    height:45px;
+    color:white;
+    background-color:rgb(31, 197, 147);
+    align-items: center;
+    display:flex;
+    /* padding-bottom:10px; */
+}
+
+#newsfeed{
+    width:41%;
+    height:100%;
+    border:solid lightgray 1.5px;
+    /* background-color: rgb(248, 246, 245); */
+}
+
+#feed{
+    width:100%;
+    height:100%;
+    padding-top:10px;
+    background-color: white;
+    /* justify-content: center;
+    display:flex; */
+}
+
+#pubcontainer{
+    background-color:rgb(245, 245, 245);
+    width:100%;
+    height:100%;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    border:solid lightgray 1.5px;
+}
+
+#userport{
+    width:30%;
+    height:45%;
+    background-color: dodgerblue;
+    display:flex;
+    font-color:black;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.flip-card {
+    background-color: transparent;
+    width: 28%;
+    height: 35%;
+    border: 1px solid #f1f1f1;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  }
+  
+  /* This container is needed to position the front and back side */
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  /* Position the front and back side */
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  }
+  
+  /* Style the front side (fallback if image is missing) */
+  .flip-card-front {
+    background-color: rgb(234, 235, 251);
+    color: black;
+    display:flex;
+    align-items: center;
+    flex-wrap:wrap;
+    justify-content: center;
+    font-size:18px;
+    box-shadow: 2px 2px;
+  }
+  
+  /* Style the back side */
+  .flip-card-back {
+    background-color: rgb(234, 235, 251);
+    color: black;
+    display:flex;
+    align-items: center;
+    font-size:16px;
+    transform: rotateY(180deg);
+    flex-wrap:wrap;
+    justify-content: center;
+    box-shadow: 2px 2px;
+  }
+  #btn{
+      margin-top:17px;
+  }
+
+  #portinc{
+      color:green;
+      font-size:38px;
+  }
+
+  #portdec{
+    color:red;
+    font-size:38px;
+}
+
+  #rowcontainer3{
+      margin-bottom: 110px;
+      width:80%;
+      height:450px;
+      /* background-color: rgb(50, 38, 214); */
+      font-size: 18px;
+      color:rgb(231, 231, 231);
+      display:flex;
+      justify-content: space-around;
+
+  }
+
+#modalheader{
+    font-size:40px;
+    color:black;
+}
+
+.dontainer{
+    color:black;
+}
+/* location */
+#myModal{
+    width:79%;
+    
+}
+#myModal1{
+    width:79%;
+    
+}
+
+/* width */
+#modalwind{
+    width:1000px;
+    padding-left: 50px;
+    padding-top: 10px;
+}
+
+.show{display:block;}
+
+.hide{display:none;}
+
+#buttonrow{
+    padding:10px;
+    margin:10px;
+    height:6%;
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width:85%;
+    /* background-color: blue; */
+}
+
+#buttonrow1{
+    padding:10px;
+    margin:10px;
+    height:6%;
+    
+    width:85%;
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /* background-color: blue; */
+}
+#createp{
+    background-color: rgb(71, 142, 248);
+}
+#graphcontainer{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:0px;
+    /* background-color: burlywood; */
+}
+
+#graphcontainer img{
+    max-width:90%;
+    max-height:460px;
+}
+
+.footer {
+    
+    bottom: 0;
+    width: 100%;
+    height:70px;
+    background-color: rgb(31, 197, 147);
+    color: white;
+    text-align: center;
+    padding:10px;
+    margin-top:2px;
+  }

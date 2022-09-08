@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">    
+    <link rel="stylesheet" href="home.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Home - TradeRight</title>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://d3js.org/d3.v4.js"></script>
+
+</head>
+<body>
+    <!-- {% for task in data%}
+    <p>{{task}}</p>
+    {% endfor %} -->
+
+    <!-- Header -->
+    <div id='header'>
+        <t style='font-size:25px;'>TradeRight</t>
+        <t>Welcome Jesse Doe  <img src="public/img/anon.PNG" alt="port" style="border-radius:60%;width:40px;height:50%;margin-left:10px;margin-bottom:20px;">    </t>
+    </div>
+    
+    <!-- Body -->
+    <div id='maincontainer'>
+
+        <!-- First Row -->
+        <div id='rowcontainer1'>
+
+            <!-- First Row - Portval Box Left -->
+            <div id='portval'>
+                <div id='boxlabel'><t id='text'>Portfolio Value</t></div>
+
+                <div id='portcont'>
+                    <!-- <div id='portlabel'>Current Value</div> -->
+                    <div id='current'>
+                        
+                        <t id='text'><t id='titles' style='font-size:18px;'>Current</t><br><t id='percdec'>$5542.71<br><t id='percdec'>-24%</t></t><br><img src='public/img/funds.png' width='35' height='35'></t>
+                        
+                
+                    </div>
+
+                    <div id='prospective'>
+                      <t id='text'><t id='titles' style='font-size:18px;'>Target</t><br><t id='percinc'>$7728.31<br><t id='percinc'>+15%</t></t><br><img src='public/img/give-money.png' width='35' height='35'></t>
+                    </div>
+                </div>
+            </div>
+
+            <!-- First Row - Ticker Box Right-->
+            <div id='tickbox'>
+                <div id='boxlabel'><t id='text'>Top Signals</t></div>
+                <div id='tickcontainer'>
+                    <div id='tickerside'>
+                        <div id='stock'>TSLA $421.63 (<t id='percinc'> BUY</t>)</div>
+                        <div id='stock'>AMD $77.84 (<t id='percdec'> SELL</t>)</div>
+                        <div id='stock'>NVDA $510.98 (<t id='percinc'> BUY</t>)</div>
+                        <div id='stock'>AAPL $116.05 (<t id='percinc'> BUY</t>)</div>
+                        <div id='stock'>MSFT $211.01 (<t id='percdec'> SELL</t>)</div>
+                        <div id='stock'>BABA $267.43 (<t id='percdec'> SELL</t>)</div>
+
+                    </div>
+
+                </div>
+            </div> 
+            <div id='optiside'>
+              <div id='boxlabel'><t id='text'>Actions</t></div>
+
+              <div id='actions'>
+                <div id='actbut'>
+                <!-- CREATE MODAL START -->
+                  <div class="dontainer">
+              
+                    <!-- Trigger the modal with a button -->
+                    <button type="button" id='createp' class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Create Portfolio</button>
+                  
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModal" role="dialog">
+                      <div class="modal-dialog" id='modall'>
+                      
+                        <!-- Modal content-->
+                        <div class="modal-content" id='modalwind'>
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 id='modalheader' class="modal-title">Create Portfolio</h4>
+                          </div>
+                          <div class="modal-body">
+                              <img src="public/img/port.png" alt="port" style="width:100px;height:50%;margin-left:400px;margin-bottom:55px;">
+                            <p>Enter Ticker Symbol and Percentage Allocation:</p>
+                            <br>
+                            <form>
+                              <p>
+                                  <label style='margin-right:10px;'>Ticker:</label> <input type="text" placeholder=' '>
+                                  <label style='margin-left:18px;margin-right:10px;''>Percent:</label> <input type="text" placeholder=" ">
+                                  <span style='margin-left:10px;text-decoration:underline;cursor:pointer;' class="remove">Remove</span>
+                              </p>
+                            
+                              <p >
+                                <button style='margin-top:10px;' type="button" class="add btn btn-secondary btn-md">Add Another Stock</button>
+                              </p>
+                          </form><div>
+                            <button type="button" style='margin-left:280px;margin-right:30px;margin-top:20px;margin-bottom:25px;'   data-dismiss="modal" class="btn btn-primary btn-lg">Create Portfolio</button>
+                            <button type="button" style='margin-top:20px;margin-bottom:25px;'  data-dismiss="modal" class="btn btn-info btn-lg">Share Portfolio</button>
+                          <!-- <a  class="btn btn-primary btn-lg" href="#" role="button">Share Portfolio</a> -->
+                        </div>
+                          <script>
+                                  $(".add").click(function() {
+                                  $("form > p:first-child").clone(true).insertBefore("form > p:last-child");
+                                  return false;
+                              });
+                      
+                              $(".remove").click(function() {
+                                  $(this).parent().remove();
+                              });
+                      
+                          </script>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                          </div>
+                        </div>
+                        
+                      </div>
+                    </div>
+                    
+                  </div>
+                  <!-- CREATE MODAL END -->
+
+                  <!-- OPTIMIZE MODAL START -->
+                  <div class="dontainer">
+              
+                    <!-- Trigger the modal with a button -->
+                    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal1">Optimize Portfolio</button>
+                  
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModal1" role="dialog">
+                      <div class="modal-dialog" id='modall'>
+                      
+                        <!-- Modal content-->
+                        <div class="modal-content" id='modalwind'>
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 id='modalheader' class="modal-title">Optimize Portfolio</h4>
+                          </div>
+                          <div class="modal-body">
+                            <t style='margin-left:160px;'>Current:</t>
+                              <img src="public/img/old.png" alt="port" style="width:100px;height:50%;margin-left:50px;margin-bottom:35px;margin-right:60px;">
+                              Target:
+                              <img src="public/img/new.png" alt="port" style="width:100px;height:50%;margin-left:50px;margin-bottom:35px;">                              
+                            <p style='margin-top:35px;'>Current Portfolio Allocation and Optimization Target:</p>
+                            <br>
+                            <table class="table">
+                              <thead>
+                                <tr>
+                                  <th scope="col">Stock</th>
+                                  <th scope="col">Current</th>
+                                  <th scope="col">Target</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>TSLA</td>
+                                  <td>79.20%</td>
+                                  <td>80.00%</td>
+                                </tr>
+                                <tr>
+                                  <td>GOOG</td>
+                                  <td>17.10%</td>
+                                  <td>20.00%</td>
+                                </tr>
+                                <tr>
+                                  <td>NVDA</td>
+                                  <td>3.00%</td>
+                                  <td>0.00%</td>
+                                </tr>
+                                  <td>AAPL</td>
+                                  <td>0.70%</td>
+                                  <td>0.00%</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          <a style='margin-left:360px;margin-top:20px;margin-bottom:35px;' data-dismiss="modal" class="btn btn-primary btn-lg" href="#" role="button">Confirm Optimization</a>
+                  
+                               <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                              </div>
+                          </div>
+                      
+                        </div>
+                        
+                      </div>
+                    </div>
+                    
+                  </div>
+              <!-- OPTIMIZE END MODAL                   -->
+          
+                </div>
+              </div>
+            </div> 
+
+        </div>
+        <!-- End First Row -->
+
+        <!-- Start second row -->
+        <div id='rowcontainer2'>
+            <!-- My portfolio graph -->
+            <div id='myportgraph'>
+              <div id='boxlabel'><t id='text'>Stock Analysis</t></div>
+              
+              <script src="https://d3js.org/d3.v4.js"></script>
+
+              <!-- Initialize a select button -->
+              
+              <p style='width:100%;text-align:center;padding-top:5px;font-size:20px;'>Select a ticker and hover for trade signal</p>
+            <p style='width:100%;text-align:center;'>
+              <label for='selectButton' style="margin-top:0px;margin-right:15px;font-size:20px;">TICKER:</label>
+              <select id="selectButton" style='font-size:22px;'></select>
+            </p>
+
+
+            <div id='buttonrow1'>
+              <input type="button" class='btn mybtn btn-primary' onclick="showImgg(1);" value="1D">
+              <input type="button" class='btn btn-primary mybtn' onclick="showImgg(2);" value="1W"> 
+              <input type="button" class='btn btn-primary mybtn' onclick="showImgg(3);" value= "1M">
+              <input type="button" class='btn btn-primary mybtn' onclick="showImgg(4);" value= "3M">
+              <input type="button" class='btn btn-primary mybtn' onclick="showImgg(5);" value= "1Y">                                    
+            </div>
+              <div id='graphcontainer'>
+                
+              <!-- Create a div where the graph will take place -->
+              <div id="my_dataviz"></div>
+
+              <!-- Color Scale -->
+              <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+              <script src='https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.min.js'></script>
+             
+              
+
+              </div>
+                <!-- <script>
+                  function showImg( id ) {
+                          // hide previously shown image
+                          for ( i = 1; i < 6; i++) {
+                              var obj = document.getElementById( "picture" + i );
+                              if (obj != null)
+                                  obj.className = 'hide';
+                          }
+                          var obj = document.getElementById( "picture" + id );      
+                          if (obj != null)
+                              obj.className = 'show';
+                  }
+                  </script>  -->
+            </div>
+
+            <!-- Market Index graph -->
+            <div id='myportgraph'>
+                <div id='boxlabel'><t id='text'>Market Indexes</t></div>
+                <p style='width:100%;text-align:center;padding-top:5px;font-size:20px;'>Select an index and hover for details</p>
+                <p style='width:100%;text-align:center;'>
+                  <label for='selectButton' style="margin-top:0px;margin-right:15px;font-size:20px;">INDEX:</label>
+                  <select id="selectButton1" style='font-size:22px;'></select>
+                </p>
+                <div id='buttonrow'>
+                  <input type="button" class='btn mybtn btn-primary' onclick="showImgg(1);" value="1D">
+                  <input type="button" class='btn btn-primary mybtn' onclick="showImgg(2);" value="1W"> 
+                  <input type="button" class='btn btn-primary mybtn' onclick="showImgg(3);" value= "1M">
+                  <input type="button" class='btn btn-primary mybtn' onclick="showImgg(4);" value= "3M">
+                  <input type="button" class='btn btn-primary mybtn' onclick="showImgg(5);" value= "1Y">                                    
+                </div>
+                <div id='graphcontainer'>
+
+                  <div id="my_dataviz1"></div>
+                               <!-- Color Scale -->
+                               
+                </div>
+                <script src="visual.js"></script>
+          </div>
+        </div>
+        <!-- End second row -->
+
+        <!-- Start Third Row -->
+        <div id='rowcontainer3' >
+            <!-- My portfolio graph -->
+            <div id='portfolios'>
+                <div id='boxlabel'><t id='text'>Published Concepts</t></div>
+                <div id='pubcontainer'>
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                            <!-- <img src="img_avatar.png" alt="Avatar" style="width:300px;height:50%;"> -->
+                            <p>
+                                <t id='portinc'>+13%</t>
+                                <br>High Returns
+                                <br>Tech-Focused
+                            </p>
+                          </div>
+                          <div class="flip-card-back">
+                            <a id='btn' class="btn btn-primary btn-lg" href="#" role="button">Apply Positions</a>
+                            <br>
+                            <p>By: John Doe<br>
+                            Published: 11/10/2020</p>
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="flip-card">
+                      <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                          <!-- <img src="img_avatar.png" alt="Avatar" style="width:300px;height:50%;"> -->
+                          <p>
+                              <t id='portinc'>+5%</t>
+                              <br>Steady Returns
+                              <br>Dow-Focused
+                          </p>
+                        </div>
+                        <div class="flip-card-back">
+                          <a id='btn' class="btn btn-primary btn-lg" href="#" role="button">Apply Positions</a>
+                          <br>
+                          <p>By: Jane Doe<br>
+                          Date: 11/12/2020</p>
+                        </div>
+                      </div>
+                    </div>
+                      
+                    <div class="flip-card">
+                      <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                          <!-- <img src="img_avatar.png" alt="Avatar" style="width:300px;height:50%;"> -->
+                          <p>
+                              <t id='portdec'>-20%</t>
+                              <br>High Risk Returns
+                              <br>Volatility-Focused
+                          </p>
+                        </div>
+                        <div class="flip-card-back">
+                          <a id='btn' class="btn btn-primary btn-lg" href="#" role="button">Apply Positions</a>
+                          <br>
+                          <p>By: Jesse Doe<br>
+                          Date: 10/03/2020</p>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="flip-card">
+                      <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                          <!-- <img src="img_avatar.png" alt="Avatar" style="width:300px;height:50%;"> -->
+                          <p>
+                              <t id='portdec'>-17%</t>
+                              <br>High Returns
+                              <br>Tech-Focused
+                          </p>
+                        </div>
+                        <div class="flip-card-back">
+                          <a id='btn' class="btn btn-primary btn-lg" href="#" role="button">Apply Positions</a>
+                          <br>
+                          <p>By: James Doe<br>
+                          Date: 10/22/2020</p>
+                        </div>
+                      </div>
+                  </div>
+
+                  <div class="flip-card">
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <!-- <img src="img_avatar.png" alt="Avatar" style="width:300px;height:50%;"> -->
+                        <p>
+                            <t id='portinc'>+8%</t>
+                            <br>Steady Returns
+                            <br>Dow-Focused
+                        </p>
+                      </div>
+                      <div class="flip-card-back">
+                        <a id='btn' class="btn btn-primary btn-lg" href="#" role="button">Apply Positions</a>
+                        <br>
+                        <p>By: Jenny Doe<br>
+                        Date: 11/19/2020</p>
+                      </div>
+                    </div>
+                  </div>
+                    
+                  <div class="flip-card">
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <!-- <img src="img_avatar.png" alt="Avatar" style="width:300px;height:50%;"> -->
+                        <p>
+                            <t id='portdec'>-12%</t>
+                            <br>High Risk Returns
+                            <br>Volatility-Focused
+                        </p>
+                      </div>
+                      <div class="flip-card-back">
+                        <a id='btn' class="btn btn-primary btn-lg" href="#" role="button">Apply Positions</a>
+                        <br>
+                        <p>By: Jimmy Doe<br>
+                        Date: 11/01/2020</p>
+                      </div>
+                    </div>
+                  </div>
+
+                    
+                </div>
+            </div>
+            <!-- Market Index graph -->
+            <div id='newsfeed'>
+                <div id='boxlabeltop'><t id='text'>Top Stories - MarketWatch.com</t></div>
+                <div id='feed'>
+                    <!-- start sw-rss-feed code --> 
+                    <script type="text/javascript"> 
+                       
+                        rssfeed_url = new Array(); 
+                        rssfeed_url[0]="http://feeds.marketwatch.com/marketwatch/topstories/";  
+                        rssfeed_frame_width="100%"; 
+                        rssfeed_frame_height="425"; 
+                        rssfeed_scroll="off"; 
+                        rssfeed_scroll_step="6"; 
+                        rssfeed_scroll_bar="on"; 
+                        rssfeed_target="_blank"; 
+                        rssfeed_font_size="16"; 
+                        rssfeed_font_face=""; 
+                        rssfeed_border="off"; 
+                        rssfeed_css_url=""; 
+                        rssfeed_title="off"; 
+                        rssfeed_title_name=""; 
+                        rssfeed_title_bgcolor="#3366ff"; 
+                        rssfeed_title_color="#fff"; 
+                        rssfeed_title_bgimage=""; 
+                        rssfeed_footer="off"; 
+                        rssfeed_footer_name="rss feed"; 
+                        rssfeed_footer_bgcolor="#fff"; 
+                        rssfeed_footer_color="#333"; 
+                        rssfeed_footer_bgimage=""; 
+                        rssfeed_item_title_length="50"; 
+                        rssfeed_item_title_color="#666"; 
+                        rssfeed_item_bgcolor="#fff"; 
+                        rssfeed_item_bgimage=""; 
+                        rssfeed_item_border_bottom="on"; 
+                        rssfeed_item_source_icon="on"; 
+                        rssfeed_item_date="off"; 
+                        rssfeed_item_description="on"; 
+                        rssfeed_item_description_length="120"; 
+                        rssfeed_item_description_color="#666"; 
+                        rssfeed_item_description_link_color="#333"; 
+                        rssfeed_item_description_tag="off"; 
+                        rssfeed_no_items="0"; 
+                        rssfeed_cache = "79844d3220b66acc093b4de90c03b80c"; 
+                        //--> 
+                        </script> 
+                        <script type="text/javascript" src="//feed.surfing-waves.com/js/rss-feed.js"></script> 
+                        <!-- end sw-rss-feed code -->
+       
+    </div>
+  </div>
+  </div>
+  </div>
+  <div class="footer">
+    <p>TradeRight &#169; 2020 All Rights Reserved.<br>  Created by Team Alpine.</p>
+  </div>
+    <!-- <script src="http://d3js.org/d3.v3.min.js"></script> -->
+
+</body>
+
+</html>
